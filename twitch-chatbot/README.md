@@ -183,6 +183,19 @@ module.exports = {
 
 The command will be automatically loaded by the command handler.
 
+## Documentation
+
+Comprehensive documentation is available in the `docs` directory:
+
+- [Documentation Index](docs/index.md) - Start here for an overview of all documentation
+- [Twitch Bot Core](docs/twitch-bot-core.md) - Details about the core Twitch bot functionality
+- [Discord Integration](docs/discord-integration.md) - Information about Discord features
+- [Web Interface](docs/web-interface.md) - Guide to using the web dashboard
+- [Command System](docs/command-system.md) - How to work with and create commands
+- [Authentication System](docs/authentication-system.md) - Details about user authentication
+- [Deployment Guide](docs/deployment-guide.md) - Instructions for deploying the bot
+- [Hosting Options](HOSTING.md) - Information about different hosting environments
+
 ## License
 
 MIT
