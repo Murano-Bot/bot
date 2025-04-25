@@ -61,6 +61,8 @@ Start the bot with:
 npm start
 ```
 
+For information on hosting options (local, cloud, or specialized services), see the [HOSTING.md](HOSTING.md) guide.
+
 ## Project Structure
 
 ```
