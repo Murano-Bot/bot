@@ -1,0 +1,53 @@
+extends layout
+
+block content
+  - var title = 'Commands'
+  div.d-flex.justify-content-between.flex-wrap.flex-md-nowrap.align-items-center.pt-3.pb-2.mb-3.border-bottom
+    h1.h2 Twitch Commands
+    div.btn-toolbar.mb-2.mb-md-0
+      a.btn.btn-primary(href="/commands/new")
+        i.bi.bi-plus-circle.me-1
+        | New Command
+
+  if commands.length === 0
+    div.alert.alert-info
+      p No commands found. Click the "New Command" button to create one.
+  else
+    div.table-responsive
+      table.table.table-striped.table-hover
+        thead
+          tr
+            th Command Name
+            th Actions
+        tbody
+          each command in commands
+            tr
+              td= command.name
+              td
+                div.btn-group
+                  a.btn.btn-sm.btn-outline-primary(href=`/commands/edit/${command.name}`)
+                    i.bi.bi-pencil.me-1
+                    | Edit
+                  form(action=`/commands/delete/${command.name}`, method="post", onsubmit="return confirm('Are you sure you want to delete this command?');")
+                    button.btn.btn-sm.btn-outline-danger(type="submit")
+                      i.bi.bi-trash.me-1
+                      | Delete
+
+  div.mt-4
+    div.card
+      div.card-header.bg-info.text-white
+        h5.mb-0 Command Structure
+      div.card-body
+        p Each command file should export an object with the following properties:
+        pre.bg-light.p-3.
+          module.exports = {
+            name: 'commandname',
+            description: 'Description of what the command does',
+            usage: '!commandname [args]',
+            execute(client, target, context, args) {
+              // Command logic here
+              client.say(target, 'Response message');
+              return 'Log message for console';
+            }
+          };
+        p.mt-3 The command will be automatically loaded by the command handler when the bot starts.

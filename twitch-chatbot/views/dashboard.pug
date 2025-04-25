@@ -1,0 +1,82 @@
+extends layout
+
+block content
+  div.d-flex.justify-content-between.flex-wrap.flex-md-nowrap.align-items-center.pt-3.pb-2.mb-3.border-bottom
+    h1.h2 Dashboard
+    div.btn-toolbar.mb-2.mb-md-0
+      div.btn-group.me-2
+        if botStatus === 'running'
+          form(action="/bot/stop", method="post")
+            button.btn.btn-danger(type="submit")
+              i.bi.bi-stop-circle.me-1
+              | Stop Bot
+        else
+          form(action="/bot/start", method="post")
+            button.btn.btn-success(type="submit")
+              i.bi.bi-play-circle.me-1
+              | Start Bot
+  
+  div.row
+    div.col-md-6.mb-4
+      div.card.h-100.dashboard-card
+        div.card-header
+          h5.mb-0 Bot Status
+        div.card-body#bot-status
+          if botStatus === 'running'
+            div.d-flex.align-items-center
+              i#bot-status-icon.bi.bi-circle-fill.bot-status-running.me-2
+              h3#bot-status-text Running
+            p.text-muted The bot is currently active and connected to Twitch and Discord.
+          else
+            div.d-flex.align-items-center
+              i#bot-status-icon.bi.bi-circle-fill.bot-status-stopped.me-2
+              h3#bot-status-text Stopped
+            p.text-muted The bot is currently inactive. Click the Start Bot button to activate it.
+    
+    div.col-md-6.mb-4
+      div.card.h-100.dashboard-card
+        div.card-header
+          h5.mb-0 Quick Links
+        div.card-body
+          div.list-group
+            a.list-group-item.list-group-item-action.d-flex.justify-content-between.align-items-center(href="/settings")
+              div
+                i.bi.bi-gear.me-2
+                | Bot Settings
+              i.bi.bi-chevron-right
+            a.list-group-item.list-group-item-action.d-flex.justify-content-between.align-items-center(href="/commands")
+              div
+                i.bi.bi-chat-left-text.me-2
+                | Twitch Commands
+              i.bi.bi-chevron-right
+            a.list-group-item.list-group-item-action.d-flex.justify-content-between.align-items-center(href="/discord-commands")
+              div
+                i.bi.bi-discord.me-2
+                | Discord Commands
+              i.bi.bi-chevron-right
+  
+  div.row
+    div.col-md-12.mb-4
+      div.card.dashboard-card
+        div.card-header
+          h5.mb-0 Getting Started
+        div.card-body
+          ol
+            li
+              strong Configure your bot settings
+              p Go to the 
+                a(href="/settings") Settings
+                |  page to configure your Twitch and Discord credentials.
+            li
+              strong Customize commands
+              p Modify existing commands or create new ones on the 
+                a(href="/commands") Twitch Commands
+                |  and 
+                a(href="/discord-commands") Discord Commands
+                |  pages.
+            li
+              strong Start the bot
+              p Once everything is configured, click the "Start Bot" button at the top of this page.
+          p For more information, refer to the 
+            a(href="https://github.com/yourusername/twitch-chatbot", target="_blank") documentation
+            | .

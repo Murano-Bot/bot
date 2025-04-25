@@ -43,6 +43,39 @@ if [ ! -f .env ]; then
     echo "OAUTH_TOKEN=$token" >> .env
     echo "CHANNEL=$channel" >> .env
     
+    echo "" >> .env
+    echo "# Discord Credentials" >> .env
+    
+    # Ask if user wants to set up Discord integration
+    read -p "Do you want to set up Discord integration? (y/n): " setup_discord
+    
+    if [ "$setup_discord" = "y" ] || [ "$setup_discord" = "Y" ]; then
+        read -p "Enter your Discord bot token: " discord_token
+        read -p "Enter your Discord client ID: " discord_client_id
+        read -p "Enter your Discord server (guild) ID: " discord_guild_id
+        read -p "Enter your Discord live announcements channel ID: " live_channel_id
+        read -p "Enter your Discord clips channel ID: " clips_channel_id
+        
+        echo "DISCORD_TOKEN=$discord_token" >> .env
+        echo "DISCORD_CLIENT_ID=$discord_client_id" >> .env
+        echo "DISCORD_GUILD_ID=$discord_guild_id" >> .env
+        echo "DISCORD_LIVE_CHANNEL_ID=$live_channel_id" >> .env
+        echo "DISCORD_CLIPS_CHANNEL_ID=$clips_channel_id" >> .env
+        
+        echo "" >> .env
+        echo "# Twitch API Credentials (for stream status and clips)" >> .env
+        
+        read -p "Enter your Twitch client ID: " twitch_client_id
+        read -p "Enter your Twitch client secret: " twitch_client_secret
+        read -p "Enter your Twitch broadcaster ID: " twitch_broadcaster_id
+        
+        echo "TWITCH_CLIENT_ID=$twitch_client_id" >> .env
+        echo "TWITCH_CLIENT_SECRET=$twitch_client_secret" >> .env
+        echo "TWITCH_BROADCASTER_ID=$twitch_broadcaster_id" >> .env
+    else
+        echo "Discord integration not set up. You can configure it later by editing the .env file."
+    fi
+    
     echo ".env file created successfully."
 else
     echo ".env file already exists."
