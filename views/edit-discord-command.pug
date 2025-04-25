@@ -1,0 +1,53 @@
+extends layout
+
+block content
+  - var title = 'Edit Discord Command'
+  div.d-flex.justify-content-between.flex-wrap.flex-md-nowrap.align-items-center.pt-3.pb-2.mb-3.border-bottom
+    h1.h2 Edit Discord Command: #{command.name}
+    div.btn-toolbar.mb-2.mb-md-0
+      a.btn.btn-outline-secondary(href="/discord-commands")
+        i.bi.bi-arrow-left.me-1
+        | Back to Discord Commands
+
+  form(action=`/discord-commands/edit/${command.name}`, method="post")
+    div.card.mb-4
+      div.card-header.bg-primary.text-white
+        h5.mb-0 Command Code
+      div.card-body
+        div.mb-3
+          textarea.form-control.code-editor#content(name="content", rows="20")= command.content
+      div.card-footer
+        div.d-grid.gap-2.d-md-flex.justify-content-md-end
+          button.btn.btn-primary(type="submit")
+            i.bi.bi-save.me-1
+            | Save Changes
+
+  div.alert.alert-warning.mt-4
+    h5 Important Note
+    p After editing Discord commands, you need to:
+    ol
+      li Stop the bot if it's running
+      li Start the bot again to register the updated commands
+      li It may take up to an hour for command changes to propagate to all Discord servers
+
+block scripts
+  script(src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.15.2/ace.js")
+  script.
+    document.addEventListener('DOMContentLoaded', function() {
+      const textarea = document.getElementById('content');
+      const editor = ace.edit(textarea.parentNode);
+      editor.setTheme("ace/theme/monokai");
+      editor.session.setMode("ace/mode/javascript");
+      editor.session.setValue(textarea.value);
+      
+      // Hide the textarea and show the editor
+      textarea.style.display = 'none';
+      editor.container.style.height = '400px';
+      editor.container.style.width = '100%';
+      
+      // Update the textarea value when the form is submitted
+      const form = textarea.closest('form');
+      form.addEventListener('submit', function() {
+        textarea.value = editor.getValue();
+      });
+    });
