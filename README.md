@@ -28,7 +28,7 @@ A comprehensive Twitch chatbot application built with Node.js that integrates wi
 
 ## Available Commands
 
-### Twitch Commands
+### Twitch Commands.
 - `!dice` - Rolls a virtual dice (1-6)
 - `!hello` - Bot greets the user
 - `!echo [message]` - Bot echoes back the message
