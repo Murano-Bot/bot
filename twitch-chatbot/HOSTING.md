@@ -1,6 +1,6 @@
-# Hosting Your Twitch Chatbot with Discord Integration and Web Interface
+# Hosting Murano
 
-There are several options for hosting your Twitch chatbot with Discord integration and web interface, ranging from running it on your local machine to deploying it on cloud platforms. Here's a guide to help you choose the best option for your needs.
+There are several options for hosting Murano, your Twitch chatbot with Discord integration and web interface, ranging from running it on your local machine to deploying it on cloud platforms. Here's a guide to help you choose the best option for your needs.
 
 > **Note:** When hosting with Discord integration and web interface, make sure your hosting environment has access to both Twitch and Discord APIs, and that all required environment variables are properly configured. The web interface requires additional port access (default: 3000).
 

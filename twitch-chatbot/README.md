@@ -1,4 +1,4 @@
-# Twitch Chatbot with Discord Integration and Web Interface
+# Murano - Twitch Chatbot with Discord Integration
 
 A comprehensive Twitch chatbot application built with Node.js that integrates with Discord to provide stream notifications and clip sharing. Includes a web-based dashboard for easy configuration and management.
 
@@ -116,10 +116,15 @@ Default login: `admin` / `admin` (be sure to change this password after first lo
 
 For information on hosting options (local, cloud, or specialized services), see the [HOSTING.md](HOSTING.md) guide.
 
+## GitHub Repository
+
+The source code for Murano is available on GitHub:
+[https://github.com/yourusername/murano](https://github.com/yourusername/murano)
+
 ## Project Structure
 
 ```
-twitch-chatbot/
+/
 ├── .env                      # Environment variables
 ├── .gitignore                # Git ignore file
 ├── package.json              # Project dependencies
@@ -147,12 +152,20 @@ twitch-chatbot/
 ├── public/                   # Static assets for web interface
 │   ├── css/                  # CSS stylesheets
 │   └── js/                   # JavaScript files
-└── views/                    # Pug templates for web interface
-    ├── layout.pug            # Base template
-    ├── dashboard.pug         # Main dashboard
-    ├── settings.pug          # Bot settings
-    ├── commands.pug          # Twitch commands management
-    └── ...                   # Other interface pages
+├── views/                    # Pug templates for web interface
+│   ├── layout.pug            # Base template
+│   ├── dashboard.pug         # Main dashboard
+│   ├── settings.pug          # Bot settings
+│   ├── commands.pug          # Twitch commands management
+│   └── ...                   # Other interface pages
+└── docs/                     # Documentation
+    ├── index.md              # Documentation index
+    ├── twitch-bot-core.md    # Twitch bot documentation
+    ├── discord-integration.md # Discord integration documentation
+    ├── web-interface.md      # Web interface documentation
+    ├── command-system.md     # Command system documentation
+    ├── authentication-system.md # Authentication documentation
+    └── deployment-guide.md   # Deployment guide
 ```
 
 ## Extending the Bot

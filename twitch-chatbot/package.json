@@ -1,7 +1,7 @@
 {
-  "name": "twitch-chatbot",
+  "name": "murano",
   "version": "1.0.0",
-  "description": "A simple Twitch chatbot application with Discord integration and web configuration",
+  "description": "Murano - A Twitch chatbot with Discord integration and web configuration",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",

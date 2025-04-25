@@ -1,6 +1,6 @@
-# Twitch Chatbot Documentation
+# Murano Documentation
 
-Welcome to the documentation for the Twitch Chatbot with Discord Integration and Web Interface. This documentation provides detailed information about the various components and features of the bot.
+Welcome to the documentation for Murano, a Twitch chatbot with Discord integration and web interface. This documentation provides detailed information about the various components and features of the bot.
 
 ## Table of Contents
 
@@ -88,7 +88,7 @@ For information about security:
 
 If you need help or want to contribute to the project:
 
-1. Check the [GitHub repository](https://github.com/yourusername/twitch-chatbot) for issues and pull requests
+1. Check the [GitHub repository](https://github.com/yourusername/murano) for issues and pull requests
 2. Follow the contribution guidelines in the [README.md](../README.md)
 3. Report bugs or suggest features through GitHub issues
 
