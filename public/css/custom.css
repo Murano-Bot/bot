@@ -3,6 +3,7 @@
 /* ===== Color Variables ===== */
 :root {
   /* Brand Colors */
+  --dark-blue: #12263e;
   --twitch-purple: #6441a5;
   --twitch-purple-dark: #533a8b;
   --twitch-purple-light: #9146ff;
@@ -57,12 +58,13 @@ a:hover {
 .sidebar {
   position: fixed;
   top: 0;
+  width: 250px;
   bottom: 0;
   left: 0;
   z-index: 100;
   padding: 48px 0 0;
   box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
-  background-color: var(--twitch-purple);
+  background-color: var(--dark-blue);
   transition: all 0.3s ease;
 }
 
@@ -77,11 +79,13 @@ a:hover {
 
 /* Navbar */
 .navbar-brand {
+  url:('/img/wordmark_white.svg');
   padding-top: .75rem;
+  width: 250px;
   padding-bottom: .75rem;
   font-size: 1.25rem;
   font-weight: 600;
-  background-color: var(--twitch-purple-dark);
+  background-color: var(--dark-blue);
   box-shadow: inset -1px 0 0 rgba(0, 0, 0, .25);
   transition: background-color 0.2s ease;
 }
@@ -135,6 +139,25 @@ a:hover {
   box-shadow: var(--shadow-sm);
   transition: all 0.3s ease;
   overflow: hidden;
+}
+/*.login-card {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 20px;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8);  
+  width: 90%;
+  margin: 0 auto;
 }
 
 .card:hover {
@@ -364,7 +387,24 @@ pre {
 
 /* Login Page */
 .login-container {
-  margin-top: 5rem;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 20px;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8);  
+  width: 60%;
+  max-width: 380px; /* Set a maximum width for the container */ 
+  margin: 0 auto;
 }
 
 .login-container .card {
@@ -510,4 +550,90 @@ pre {
 @keyframes slideIn {
   from { transform: translateY(20px); opacity: 0; }
   to { transform: translateY(0); opacity: 1; }
+}
+
+/* ===== MURANO Logo Full Styling ===== */
+
+:root {
+  --bg-dark: #0A0E1A;
+  --glow-blue: #00BFFF;
+  --text-blue: #00AEEF;
+  --soft-glow: #33CCFF;
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-blue);
+  font-family: 'Orbitron', 'Poppins', 'Segoe UI', sans-serif;
+}
+
+.logo {
+  background-image: url('/public/img/wordmark_white.svg');
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--glow-blue);
+  will-change: transform, text-shadow;
+}
+
+.logo-symbol {
+  background-color: transparent;
+  border: 2px solid var(--glow-blue);
+  border-radius: 12px;
+  padding: 0.4rem 0.5rem;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.8rem;
+  box-shadow: 0 0 10px var(--soft-glow);
+}
+
+@keyframes shimmer-once {
+  0% {
+    text-shadow: 0 0 8px var(--soft-glow);
+  }
+  50% {
+    text-shadow: 0 0 15px var(--soft-glow), 0 0 25px var(--glow-blue);
+  }
+  100% {
+    text-shadow: 0 0 8px var(--soft-glow);
+  }
+}
+
+.logo:hover .logo-symbol,
+.logo:hover span {
+  animation: shimmer-once 1.5s ease forwards;
+}
+
+@keyframes ambient-glow {
+  0% {
+    text-shadow: 0 0 8px var(--soft-glow);
+  }
+  50% {
+    text-shadow: 0 0 12px var(--soft-glow), 0 0 20px var(--glow-blue);
+  }
+  100% {
+    text-shadow: 0 0 8px var(--soft-glow);
+  }
+}
+
+.logo .logo-symbol,
+.logo span {
+  animation: ambient-glow 5s ease-in-out infinite;
+}
+
+.button-primary {
+  background-color: var(--glow-blue);
+  border: none;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 0 10px var(--soft-glow);
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.button-primary:hover {
+  background-color: var(--text-blue);
+  box-shadow: 0 0 20px var(--soft-glow);
+  cursor: pointer;
 }
