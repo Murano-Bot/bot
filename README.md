@@ -206,9 +206,11 @@ Comprehensive documentation is available in the `docs` directory:
 - [Web Interface](docs/web-interface.md) - Guide to using the web dashboard
 - [Command System](docs/command-system.md) - How to work with and create commands
 - [Authentication System](docs/authentication-system.md) - Details about user authentication
-- [Deployment Guide](docs/deployment-guide.md) - Instructions for deploying the bot
+- [Deployment Guide](docs/deployment-guide.md) - Instructions for deploying the bot.
 - [Hosting Options](HOSTING.md) - Information about different hosting environments
 
 ## License
 
 MIT
+<!--I changed Nothing-->
+<!--Linear Test-->
