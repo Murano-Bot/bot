@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"vscode_vibrancy.enableAutoTheme": true,
+		"vscode_vibrancy.imports": [
+			
+			"/path/to/file"
+		]
+	}
+}
