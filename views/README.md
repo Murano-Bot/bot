@@ -1,6 +1,6 @@
 # Murano - Twitch Chatbot with Discord Integration
 
-A comprehensive Twitch chatbot application built with Node.js that integrates with Discord to provide stream notifications and clip sharing. Includes a web-based dashboard for easy configuration and management. I made this.
+A comprehensive Twitch chatbot application built with Node.js that integrates with Discord to provide stream notifications and clip sharing. Includes a web-based dashboard for easy configuration and management.
 
 ## Features
 
