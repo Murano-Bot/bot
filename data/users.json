@@ -2,11 +2,7 @@
   {
     "id": 1,
     "username": "admin",
-<<<<<<< HEAD
-    "password": "$2b$10$CwQruIxk5CCF/rsIBR9Vmu/wMbvKVBqtJYv8r.7bGYzvXw/THUxRq",
-=======
-    "password": "$2b$10$Q5ehVzTfAiOHcEzMcK1mw.GP4XnLQzHHwFANa/ZCsjoeADBZ2fxmW",
->>>>>>> parent of 93107f1 (I think this might break)
+    "password": "$2b$10$kuPEip7NG18e9aXJ1Qsju.20u0jH2ZM29VRmyK.dFBvy98BE6geZC",
     "isAdmin": true
   }
 ]
